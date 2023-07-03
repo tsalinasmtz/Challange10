@@ -71,7 +71,7 @@ def home():
 def precipitation():
     session = Session(engine)
     
-    one_year_ago = (pd.to_datetime(most_recent_date) - pd.DateOffset(years=1)).strftime('%Y-%m-%d')
+    one_year_ago = (pd.to_datetime("2017-08-23") - pd.DateOffset(years=1)).strftime('%Y-%m-%d')
     
     results = session.query(Measurement.date, Measurement.prcp).\
         filter(Measurement.date >= one_year_ago).all()
